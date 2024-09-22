@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="icon" href="/imagens/883360.png" type="image/png">
+    <title>Amorim Nutri</title>
+</head>
+<body>
+
+    <header>
+<div class="cabecalho">
+        <div class="menu">
+           <img id="menu" src="/imagens/icons8-menu-100.png" alt="">
+          
+        </div>
+<div class="logo">
+   Amorim Nutri      
+      
+</div>
+        </div>
+    
+
+    </header>
+<div class="alerta">🔥 Ferramentas para Nutricionistas 🔥</div>
+
+    <main>
+        <div class="container">
+            <H1>Informe Seus dados</H1>
+            <br>
+            <form id="formularDados">
+            <input name="nome" type="text" placeholder="Nome Completo" id="nome">
+            <input name="telefone" type="number" placeholder="Telefone" id="telefone">
+            <input  name="peso" type="text" class="input" id="peso" placeholder="Peso"  oninput="limitarEntrada(this)">
+            <input type="number" name="altura" id="altura" placeholder="Digite sua altura" step="0.01" required>
+
+            <input name="idade" type="number" class="input" id="idade" placeholder="Idade">
+            <select name="objetivo" id="objetivo">
+                <option value="Emagrecer">Selecione um objetivo 🏋️‍♀️</option>
+                <option value="Emagrecer">Emagrecer</option>
+                <option value="Ganhodemassa">Ganho de Massa Muscular</option>
+                <option value="Definiçãoemassa">Definição + Massa Muscular</option>
+                <option value="Definição">Definição</option>
+                <option value="Emagreceremassa">Emagrecer + Massa Muscular</option>
+            </select>
+            <select name="calorias" id="calorias">
+                <option value="">Calorias desejadas 🔥</option>
+                <option value="Não">Não sei dizer</option>
+                <option value="1200 a 1500">1200 a 1500 calorias</option>
+                <option value="1600 a 1900">1600 a 1900 calorias</option>
+                <option value="2000 a 2300">2000 a 2300 calorias</option>
+                <option value="2400 a 2700">2400 a 2700 calorias</option>
+                <option value="2800 a 3100">2800 a 3100 calorias</option>
+                <option value="3200 a 3500">3200 a 3500 calorias</option>
+            </select>
+        
+<br>
+<button type="button" id="masculino" class="botãoM" onclick="selecionarGenero('masculino')">Masculino</button>
+<button type="button" id="feminino" class="botãoF" onclick="selecionarGenero('feminino')">Feminino</button>
+<input name="genero" type="hidden" id="genero" value="">
+
+          </div>
+
+     
+
+
+          <div class="containercomidas">
+
+            <h1>Café da manhã ☕</h1>
+            <br>
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Tapioca + Frango">
+                <span class="checkmark">Tapioca + Frango 🥙</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Fruta">
+                <span class="checkmark">Fruta🍎</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Café">
+                <span class="checkmark">Café☕</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Pão de Queijo">
+                <span class="checkmark">Pão de Queijo🧀</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Cuscuz">
+                <span class="checkmark">Cuscuz 🍚</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Pão + Ovo">
+                <span class="checkmark">Pão + Ovo🥖</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Pão + Queijo">
+                <span class="checkmark">Pão + Queijo🍞</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="cafedamanha[]" value="Crepioca + Queijo">
+                <span class="checkmark">Crepioca + Queijo🥞</span>
+            </label>
+    
+        </div>
+    
+        <div class="containercomidas">
+    
+            <h1>Almoço 🍽️</h1>
+            <br>
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Frango">
+                <span class="checkmark">Frango🍗</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Carne Moida">
+                <span class="checkmark">Carne Moida🥩</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Feijão">
+                <span class="checkmark">Feijão🍲</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Arroz">
+                <span class="checkmark">Arroz🍚</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Salada">
+                <span class="checkmark">Salada🥗</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Macarrão">
+                <span class="checkmark">Macarrão🍝</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Pão + Queijo">
+                <span class="checkmark">Pão + Queijo🍞</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Ovo">
+                <span class="checkmark">Ovo🥚</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Suco">
+                <span class="checkmark">Suco🥤</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Tilápia">
+                <span class="checkmark">Tilápia🐟</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Merluza">
+                <span class="checkmark">Merluza🐟</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Salmão">
+                <span class="checkmark">Salmão🐟</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Fruta">
+                <span class="checkmark">Fruta🍍</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Alcatra">
+                <span class="checkmark">Alcatra🥩</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="almoco[]" value="Carne-Porco">
+                <span class="checkmark">Carne-Porco🐖</span>
+            </label>
+    
+        </div>
+    
+        <div class="containercomidas">
+            <h1>Lanche da Manhã e Tarde 🥪</h1>
+            <br>
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Whey">
+                <span class="checkmark">Whey🥛</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Fruta">
+                <span class="checkmark">Fruta🍍</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Cuscuz">
+                <span class="checkmark">Cuscuz🍚</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Pão + Ovo">
+                <span class="checkmark">Pão + Ovo🥖</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Tapioca + Frango">
+                <span class="checkmark">Tapioca + Frango🥙</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Crepioca + Queijo">
+                <span class="checkmark">Crepioca + Queijo🥞</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Rap10 + Frango">
+                <span class="checkmark">Rap10 + Frango🌯</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="lanche[]" value="Sanduíche Frango">
+                <span class="checkmark">Sanduíche Frango 🥪</span>
+            </label>
+        </div>
+    
+        <div class="containercomidas">
+    
+            <h1>Janta 🍽️</h1>
+            <br>
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Frango">
+                <span class="checkmark">Frango🍗</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Carne Moida">
+                <span class="checkmark">Carne Moida🥩</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Feijão">
+                <span class="checkmark">Feijão🍲</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Arroz">
+                <span class="checkmark">Arroz🍚</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Salada">
+                <span class="checkmark">Salada🥗</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Macarrão">
+                <span class="checkmark">Macarrão🍝</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Pão + Queijo">
+                <span class="checkmark">Pão + Queijo🍞</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Ovo">
+                <span class="checkmark">Ovo🥚</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Suco">
+                <span class="checkmark">Suco🥤</span>
+            </label>
+        
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Tilápia">
+                <span class="checkmark">Tilápia🐟</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Merluza">
+                <span class="checkmark">Merluza🐟</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Salmão">
+                <span class="checkmark">Salmão🐟</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Fruta">
+                <span class="checkmark">Fruta🍍</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Alcatra">
+                <span class="checkmark">Alcatra🥩</span>
+            </label>
+    
+            <label class="custom-checkbox">
+                <input type="checkbox" name="janta[]" value="Carne-Porco">
+                <span class="checkmark">Carne-Porco🐖</span>
+            </label>
+    
+        </div>
+
+
+</div>
+
+<div class="container">
+    <H1>Treino e atividades 🏋️‍♀️</H1>
+    <br>
+    
+    <select name="exercicio" id="exercicio"><option value="1.1">Nível de Atividade Física</option>
+        <option value="1.2">Sedentário (pouca ou nenhuma atividade física)</option>
+        <option value="1.3">Levemente ativo (exercícios 1 a 3 vezes por semana)</option>
+        <option value="1.5">Moderadamente ativo (exercícios de 3 a 5 vezes por semana)</option>
+        <option value="1.7">Altamente ativo (exercícios de 5 a 7 dias por semana)</option>
+        <option value="1.8"> Extremamente ativo (exercícios todos dias e faz trabalho braçal) </option>
+    </select>
+
+    <select name="treino" id="treino"><option value="">Onde você treina?</option>
+        <option value="Academia">Treino na academia</option>
+        <option value="caseiro">Treino em casa</option>
+        <option value="Não">Não Treino</option></select>
+<br>
+
+<button type="submit" id="enviar" onclick="enviarDados(event)">Enviar Dados</button>
+
+
+
+  </div>
+  <div id="resultadocontainer" class="resultadocontainer"></div>
+  <br>
+
+  <div class="containerfinal">
+
+<h3>Mais acessível que um café! ☕</h3>
+
+<p class="text-white mt-4">Por menos de <span class="font-bold text-green-50 underline">R$10,00</span>, Você monta sua Dieta <span class="font-bold text-green-50">TOTALMENTE PERSONALIZADA</span>.</p>
+
+
+
+
+<button id="montardieta">MONTAR MINHA DIETA</button>
+
+  </div>
+</form>
+   <script src="/src/scripts.js"></script>
+</body>
+</html>
