@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "src/index.html", // ou o arquivo principal da sua aplicação
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/src/index.html" // ou o arquivo principal da sua aplicação
+      }
+    ]
+  }
