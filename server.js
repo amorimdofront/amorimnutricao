@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(cors()); // Permite todas as origens
-
 const port = 3000;
 
 // Configuração do body-parser para lidar com os dados do formulário
