@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(cors()); // Permite todas as origens
-const port = 3000;
+
 
 // Configuração do body-parser para lidar com os dados do formulário
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,6 +54,7 @@ app.post('/processar-dados', (req, res) => {
 });
 
 // Iniciar o servidor
+const port = process.env.PORT || 3000; // Usa a porta fornecida pelo Render
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });
