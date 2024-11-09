@@ -122,35 +122,26 @@ document.getElementById('formularDados').addEventListener('submit', function(eve
     event.preventDefault(); // Impede o envio tradicional do formulário e o recarregamento da página
 
     // Capturando os dados do formulário
-    const formData = new FormData(this);
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries()); // Converte FormData para objeto
 
-    // Converte os dados do FormData em um objeto JSON
-    const data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
-
-    // Envia os dados para o servidor
-    fetch('http://localhost:3000/processar-dados', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+    fetch('https://formspree.io/f/xldenejl', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
     })
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Erro ao enviar dados');
-      }
-      return response.text();
-    })
-    .then(result => {
-      alert(result); // Exibe uma mensagem de sucesso
-      document.getElementById('formularDados').reset(); // Limpa o formulário após o envio
+        if (!response.ok) {
+            throw new Error('Erro ao enviar dados');
+        }
+        alert('Formulário enviado com sucesso!'); // Mensagem amigável de sucesso
+        document.getElementById('formularDados').reset(); // Limpa o formulário
     })
     .catch(error => {
-      console.error('Erro ao enviar dados:', error);
-      alert('Erro ao enviar dados.');
+        console.error('Erro ao enviar dados:', error);
+        alert('Erro ao enviar dados.');
     });
 });
 
