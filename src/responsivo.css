@@ -1,0 +1,115 @@
+@media (max-width: 1024px) {
+    .container,
+    .containercomidas,
+    .resultadocontainer,
+    .containerfinal {
+        width: 90%; /* Reduza a largura para 90% da tela */
+        padding: 20px; /* Ajuste o espaçamento */
+    }
+
+    .cabecalho {
+        flex-direction: column; /* Alinhe os itens verticalmente */
+        gap: 20px; /* Espaço entre os elementos */
+    }
+
+    .logo {
+        margin-right: 0; /* Remova a margem */
+        text-align: center; /* Centralize o logo */
+    }
+
+    button {
+        padding: 10px; /* Ajuste o espaçamento dos botões */
+        margin-inline: 50px; /* Ajuste a margem para centralizar */
+    }
+}
+
+/* Consultas de mídia para dispositivos móveis (telas menores que 768px) */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column; /* Alinhe os itens verticalmente */
+        gap: 15px; /* Reduza o espaçamento */
+    }
+
+    .logo {
+        font-size: 20px; /* Ajuste o tamanho da fonte do logo */
+        margin: 0; /* Remova margens */
+    }
+
+    
+    .container,
+    .containercomidas,
+    .resultadocontainer,
+    .containerfinal {
+        width: 95%; /* Quase toda a largura da tela */
+        padding: 15px; /* Ajuste o espaçamento */
+    }
+
+    main {
+        margin-top: 10px; /* Reduza a margem superior */
+    }
+
+    section {
+        flex-direction: column; /* Organize as seções em coluna */
+        height: auto; /* Altura automática */
+    }
+
+    h1 {
+        font-size: 20px; /* Reduza o tamanho da fonte */
+    }
+
+    .custom-checkbox .checkmark {
+        width: 100%; /* Oculpa a largura completa */
+        font-size: 12px; /* Reduza o tamanho da fonte */
+    }
+
+    button {
+        padding: 10px; /* Menor espaçamento */
+        width: 100%; /* Oculpa toda a largura do container */
+        margin-inline: 0; /* Remova margens laterais */
+    }
+
+    #montardieta {
+        width: 100%; /* Oculpa toda a largura */
+        font-size: 18px; /* Ajuste o tamanho da fonte */
+        margin-left: 0; /* Remova a margem esquerda */
+    }
+}
+
+/* Consultas de mídia para dispositivos pequenos (telas menores que 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Reduza o tamanho da fonte geral */
+    }
+
+    .cabecalho {
+        gap: 10px; /* Reduza ainda mais o espaçamento */
+    }
+
+    .container,
+    .containercomidas,
+    .resultadocontainer,
+    .containerfinal {
+        padding: 10px; /* Espaçamento mais compacto */
+    }
+
+    .generom{
+
+        padding: 5px;
+        
+    }
+
+    .generof{
+
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 18px; /* Fonte menor */
+    }
+
+    .custom-checkbox .checkmark {
+        padding: 8px; /* Menor espaçamento interno */
+        font-size: 10px; /* Fonte menor */
+    }
+}

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Oswald:wght@200..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Jacques+Francois+Shadow&display=swap');
 
 
 body {
@@ -19,23 +20,26 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
    
 
 }
 
 #menu {
 
-    max-height: 50px;
+    max-height: 60px;
     cursor: pointer;
     display: flex;
+    
      
 }
 
 .logo {
 top: 1px;
+margin-right: auto;
 
-    margin-right: 580px;
-    font-family: "Jacques Francois Shadow", serif;
+font-family: "Anton SC", sans-serif;
+font-size: 30px;
     color:green;
 
 
@@ -123,10 +127,12 @@ h1 {
   button {
 
     
-    padding: 15px;
+    padding: 18px;
     margin-inline: 110px;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
+    
     
    
    
