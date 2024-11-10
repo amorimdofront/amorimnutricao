@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Jacques+Francois+Shadow&display=swap');
 body {
 
     box-sizing: border-box;
@@ -16,27 +17,30 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
    
 
 }
 
 #menu {
 
-    max-height: 50px;
+    max-height: 60px;
     cursor: pointer;
     display: flex;
+    
      
 }
 
 .logo {
-    top: 1px;
-    
-        margin-right: 580px;
-        font-family: "Jacques Francois Shadow", serif;
-        color:green;
-    
-    
-    }
+top: 1px;
+margin-right: auto;
+
+font-family: "Anton SC", sans-serif;
+font-size: 30px;
+    color:green;
+
+
+}
 
 .alerta{
 

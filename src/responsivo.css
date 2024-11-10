@@ -18,9 +18,11 @@
     }
 
     button {
-        padding: 10px; /* Ajuste o espaçamento dos botões */
+        padding: 20px; /* Ajuste o espaçamento dos botões */
         margin-inline: 50px; /* Ajuste a margem para centralizar */
     }
+
+    
 }
 
 /* Consultas de mídia para dispositivos móveis (telas menores que 768px) */
