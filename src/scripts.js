@@ -14,7 +14,6 @@ const peso = document.getElementById('peso').value;
 const altura = document.getElementById('altura').value;
 const idade = document.getElementById('idade').value;
 const objetivo = document.getElementById('objetivo').value;
-const calorias = document.getElementById('calorias').value;
 const nivelAtividade = document.getElementById('exercicio').value;
 const localTreino = document.getElementById('treino').value;
 const generom = document.getElementById('masculino').value;
@@ -60,7 +59,6 @@ const generof = document.getElementById('feminino').value;
          altura,
          idade,
          objetivo,
-         calorias,
          nivelAtividade,
          localTreino,
          calculoIMC: calculoIMC.toFixed(2),// Formata o IMC com 2 casas decimais
@@ -73,7 +71,7 @@ const generof = document.getElementById('feminino').value;
 
      const resultado = document.getElementById('resultadocontainer');
 
-     if (peso && altura && idade && objetivo && calorias && nivelAtividade && localTreino && nome && telefone) {
+     if (peso && altura && idade && objetivo  && nivelAtividade && localTreino && nome && telefone) {
          // Converte o objeto em uma string formatada
          let dadosFormatados = '<h2>Dados do Usuário:</h2>';
          for (const [chave, valor] of Object.entries(dadosUsuario)) {
@@ -122,8 +120,18 @@ document.getElementById('formularDados').addEventListener('submit', function(eve
     event.preventDefault(); // Impede o envio tradicional do formulário e o recarregamento da página
 
     // Capturando os dados do formulário
+    const getCheckedValues = (name) => {
+        return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(cb => cb.value);
+    };
+    
     const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries()); // Converte FormData para objeto
+    const data = Object.fromEntries(formData.entries());
+    
+    // Adiciona os arrays dos alimentos
+    data.cafedamanha = getCheckedValues('cafedamanha[]');
+    data.almoco = getCheckedValues('almoco[]');
+    data.lanche = getCheckedValues('lanche[]');
+    data.janta = getCheckedValues('janta[]');
 
     fetch('https://formspree.io/f/xldenejl', {
         method: 'POST',

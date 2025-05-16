@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <!-- Inclua a URL da CDN correta do Supabase -->
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+        const supabaseUrl = 'https://zqhrhkxqpschhgfwhhld.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxaHJoa3hxcHNjaGhnZndoaGxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE0NDE2MDYsImV4cCI6MjA0NzAxNzYwNn0.NcosVHKClyXFOzNCa923DNbeeTDZ3FcZeNi5O4vIMe4';
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        document.getElementById('login-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+            const messageElement = document.getElementById('message');
+            if (error) {
+                messageElement.textContent = 'Erro: ' + error.message;
+            } else {
+                messageElement.textContent = 'Login bem-sucedido!';
+            }
+        });
+    </script>
+</body>
+</html>

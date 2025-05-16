@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Registro</h2>
+        <form id="register-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <input type="password" id="confirm-password" placeholder="Confirmar Senha" required>
+            <button type="submit">Criar Conta</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <!-- Inclua a URL da CDN correta do Supabase -->
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+        const supabaseUrl = 'https://zqhrhkxqpschhgfwhhld.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxaHJoa3hxcHNjaGhnZndoaGxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE0NDE2MDYsImV4cCI6MjA0NzAxNzYwNn0.NcosVHKClyXFOzNCa923DNbeeTDZ3FcZeNi5O4vIMe4';
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // Manipulação do formulário de registro
+        document.getElementById('register-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            // Verifica se as senhas coincidem
+            if (password !== confirmPassword) {
+                document.getElementById('message').textContent = 'As senhas não coincidem!';
+                return;
+            }
+
+            // Tenta criar o usuário
+            const { error } = await supabase.auth.signUp({
+                email,
+                password
+            });
+
+            // Exibe a mensagem de sucesso ou erro
+            const messageElement = document.getElementById('message');
+            if (error) {
+                messageElement.textContent = 'Erro: ' + error.message;
+            } else {
+                messageElement.textContent = 'Conta criada com sucesso! Por favor, faça login.';
+            }
+        });
+    </script>
+</body>
+</html>
